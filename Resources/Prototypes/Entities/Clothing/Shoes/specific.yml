@@ -254,6 +254,30 @@
 
 - type: entity
   parent: ClothingShoesBaseButcherable
+  id: ClothingShoesWheelys
+  name: Wheelys
+  description: "Nanotrasen's latest EVOLUTION in wheel-based walking tech."
+  components:
+  - type: Sprite
+    sprite: Clothing/Shoes/Specific/wheelys.rsi
+  - type: Clothing
+    sprite: Clothing/Shoes/Specific/wheelys.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        offset: "0, -0.04"
+  - type: Item
+    sprite: Clothing/Shoes/Specific/wheelys.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: Skates
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSkates
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
   id: ClothingShoesSkates
   name: roller skates
   description: "Get your skates on!"
