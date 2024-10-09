@@ -255,7 +255,7 @@
   parent: ClothingShoesBaseButcherable
   id: ClothingShoesWheelys
   name: Wheelys
-  description: "Nanotrasen's latest EVOLUTION in wheel-based walking tech."
+  description: "Rumors say the CMO wants to ban them for causing injuries."
   components:
   - type: Sprite
     sprite: Clothing/Shoes/Specific/wheelys.rsi
