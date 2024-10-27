@@ -75,7 +75,7 @@ public sealed partial class MakeSyndient : EntityEffect
                     //we FINALLY have the name of the injector. jesus fuck.
                     //now, we build the role name, description, etc.
 
-                    //Don't add a ghost role to things that already have ghost roles
+                    //Don't add a ghost role to things that already have ghost role
 
                     String rules = (Loc.GetString("ghost-role-information-subjuzine-rules-1"));
                     rules = rules + chosenName;
