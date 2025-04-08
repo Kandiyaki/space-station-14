@@ -90,6 +90,22 @@
   loadouts:
   - LoadoutDecapoidBreathToolInventory
 
+- type: loadoutGroup
+  id: GroupBreathToolDecapoidInventoryClown
+  name: loadout-group-breath-tool-inventory-decapoid-clown
+  minLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutDecapoidBreathToolInventoryClown
+
+- type: loadoutGroup
+  id: GroupBreathToolDecapoidInventoryMime
+  name: loadout-group-breath-tool-inventory-decapoid-mime
+  minLimit: 1
+  hidden: true
+  loadouts:
+  - LoadoutDecapoidBreathToolInventoryMime
+
 # apids
 
 - type: startingGear #the starting gear for the apid botanist. they dont have a backslot and whatever so ive gotta do it bespoke
@@ -244,6 +260,7 @@
   loadouts:
   - CaptainSunglasses
   - CaptainVisor
+  - CaptainEyepatch
 
 - type: loadoutGroup
   id: CaptainGloves
@@ -261,6 +278,7 @@
   - BlackCommandHeels
   - BlueCommandHeels
   - CaptainJumpBoots
+  - CaptainHeeledBoots
 
 - type: loadoutGroup
   id: CommandHeadset
@@ -278,6 +296,7 @@
   loadouts:
   - EmergencyNitrogenCommand
   - EmergencyOxygenCommand
+  - EmergencyMeatCommand
   - LoadoutSpeciesAquaticFullTank
   - LoadoutSpeciesVoxNitrogenCommand
 
@@ -289,6 +308,7 @@
   loadouts:
   - EmergencyNitrogenExtendedCommand
   - EmergencyOxygenExtendedCommand
+  - EmergencyMeatExtendedCommand
   - LoadoutSpeciesAquaticFullTank
   - LoadoutSpeciesVoxNitrogenCommand
 
@@ -300,6 +320,7 @@
   loadouts:
   - EmergencyNitrogenSecurityCommand
   - EmergencyOxygenSecurityCommand
+  - EmergencyMeatSecurityCommand
   - LoadoutSpeciesAquaticFullTank
   - LoadoutSpeciesVoxNitrogenCommand
 
@@ -341,6 +362,7 @@
   - HospitalityDirectorBandana
   - BartenderHead
   - HospitalityDirectorBeret
+  - HospitalityDirectorBellhopHD
 
 - type: loadoutGroup
   id: HospitalityDirectorNeck
@@ -494,6 +516,20 @@
   - LacedShoes
   - LeatherShoes
   - BlackHeels
+
+- type: loadoutGroup
+  id: LawyerPDA
+  name: loadout-group-lawyer-id
+  loadouts:
+  - LawyerPDA
+  - SeniorLawyerPDA
+
+- type: loadoutGroup
+  id: LawyerBriefcase
+  name: loadout-group-lawyer-briefcase
+  loadouts:
+  - BrownBriefcase
+  - BlackBriefcase
 
 - type: loadoutGroup
   id: ChaplainEyes
@@ -692,6 +728,13 @@
   minLimit: 0
   loadouts:
   - ScarfBrown
+
+- type: loadoutGroup
+  id: CargoTechnicianBelt
+  name: loadout-group-cargo-technician-belt
+  minLimit: 0
+  loadouts:
+  - SeniorCargoBelt
 
 - type: loadoutGroup
   id: CargoTechnicianPDA
@@ -926,6 +969,7 @@
   minLimit: 0
   loadouts:
   - ScarfRed
+  - SecPoncho
 
 - type: loadoutGroup
   id: UpperSecurityShoes
@@ -1010,6 +1054,7 @@
   loadouts:
   - EmergencyNitrogenBrigmedic
   - EmergencyOxygenBrigmedic
+  - EmergencyMeatBrigmedic
   - LoadoutSpeciesAquaticFullTank
   - LoadoutSpeciesVoxNitrogen
 
