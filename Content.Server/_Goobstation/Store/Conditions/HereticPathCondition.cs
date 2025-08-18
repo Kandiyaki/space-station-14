@@ -58,8 +58,8 @@ public sealed partial class HereticPathCondition : ListingCondition
         var knowledgeProtoId = new ProtoId<HereticKnowledgePrototype>((ProtoId<HereticKnowledgePrototype>)args.Listing.ProductHereticKnowledge);
         knowledgeSys.GetKnowledgePath(knowledgeSys.GetKnowledge(knowledgeProtoId), out var knowledgePath);
 
-        // and the knowledge isn't from the main path
-        if (knowledgePath != null && hereticComp.MainPath == knowledgePath)
+        // and the knowledge isn't from the main path, and is available to other paths
+        if (knowledgePath != null && hereticComp.MainPath == knowledgePath && !knowledgeSys.IsAvailableToOtherPaths(knowledgeProtoId))
             return true;
 
         // then add a penalty

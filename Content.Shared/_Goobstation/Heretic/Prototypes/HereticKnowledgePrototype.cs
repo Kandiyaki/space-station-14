@@ -14,6 +14,11 @@ public sealed partial class HereticKnowledgePrototype : IPrototype
     [DataField] public int Stage = 1;
 
     /// <summary>
+    ///     Indicates that those who aren't on the knowledge's path can buy it.
+    /// </summary>
+    [DataField] public bool AvailableToOtherPaths = false;
+
+    /// <summary>
     ///     What event should be raised
     /// </summary>
     [DataField] public object? Event;

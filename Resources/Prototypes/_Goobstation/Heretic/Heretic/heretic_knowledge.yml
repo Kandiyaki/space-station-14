@@ -33,14 +33,14 @@
 
 - type: hereticKnowledge
   id: BlazingDash
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 3
   actionPrototypes:
   - ActionHereticBlazingDash
 
 - type: hereticKnowledge
   id: AshenShift
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 3
   actionPrototypes:
   - ActionHereticJaunt
@@ -57,7 +57,7 @@
 
 - type: hereticKnowledge
   id: MaskOfMadness
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 6
   ritualPrototypes:
   - MaskOfMadness
@@ -68,7 +68,7 @@
 
 - type: hereticKnowledge
   id: NightwatcherRebirth
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 8
   actionPrototypes:
   - ActionHereticNightwatcherRebirth
@@ -99,7 +99,7 @@
 
 - type: hereticKnowledge
   id: ImperfectRitual
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 3
   ritualPrototypes:
   - ImperfectRitual
@@ -116,7 +116,7 @@
 
 - type: hereticKnowledge
   id: RawRitual
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 6
   ritualPrototypes:
   - RawRitual
@@ -127,7 +127,7 @@
 
 - type: hereticKnowledge
   id: LonelyRitual
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 8
   ritualPrototypes:
   - LonelyRitual
@@ -157,7 +157,7 @@
 
 - type: hereticKnowledge
   id: AristocratWay
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 3
   event: !type:HereticAristocratWayEvent
 
@@ -173,7 +173,7 @@
 
 - type: hereticKnowledge
   id: VoidPhase
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 6
   actionPrototypes:
   - ActionHereticVoidPhase
@@ -184,7 +184,7 @@
 
 - type: hereticKnowledge
   id: VoidPull
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 8
   actionPrototypes:
   - ActionHereticVoidPull
@@ -203,7 +203,7 @@
 ### side paths
 - type: hereticKnowledge
   id: RitualOfKnowledge
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 5
   ritualPrototypes:
   - RitualOfKnowledge
@@ -211,14 +211,14 @@
 ## stage 3
 - type: hereticKnowledge
   id: ArmorerRitual
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 3
   ritualPrototypes:
   - ArmorerRitual
 
 - type: hereticKnowledge
   id: PriestRitual
-  sideKnowledge: true
+  availableToOtherPaths: true
   stage: 3
   ritualPrototypes:
   - PriestRitual

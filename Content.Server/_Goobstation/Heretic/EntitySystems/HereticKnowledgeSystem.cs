@@ -55,7 +55,7 @@ public sealed partial class HereticKnowledgeSystem : EntitySystem
                 comp.MainPath = path;
             }
             // If the knowledge is from main path, increase path stage to value
-            if (data.Stage > comp.PathStage && path== comp.MainPath)
+            if (data.Stage > comp.PathStage && path == comp.MainPath)
             {
                 comp.PathStage = data.Stage;
             }
@@ -103,11 +103,15 @@ public sealed partial class HereticKnowledgeSystem : EntitySystem
 
     public bool GetKnowledgePath(ProtoId<HereticKnowledgePrototype> knowledge, [NotNullWhen(true)] out HereticPathPrototype? path)
     {
+        //get all existing paths
         var paths = _proto.EnumeratePrototypes<HereticPathPrototype>().ToList();
+        //for each path
         foreach (var protoPath in paths)
         {
+            //for each knowledge in that path
             foreach (var protoKnowledge in protoPath.Knowledge)
             {
+                //if the knowledge we're looking for isn't the one we're looking at, go to the next one
                 if (knowledge != protoKnowledge)
                 {
                     continue;
@@ -118,5 +122,10 @@ public sealed partial class HereticKnowledgeSystem : EntitySystem
         }
         path = null;
         return false;
+    }
+
+    public bool IsAvailableToOtherPaths(ProtoId<HereticKnowledgePrototype> knowledge)
+    {
+        return GetKnowledge(knowledge).AvailableToOtherPaths;
     }
 }
