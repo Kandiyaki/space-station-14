@@ -84571,7 +84571,7 @@ entities:
     - type: Transform
       pos: 18.662292,-30.260035
       parent: 2
-- proto: ToyFigurineTania
+- proto: PlushieBug
   entities:
   - uid: 16642
     components:
