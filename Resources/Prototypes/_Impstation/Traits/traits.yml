@@ -177,6 +177,7 @@
     damage:
       types:
         Slash: 5
-  excludedSpecies: #already have claws. no free points
+  excludedSpecies: #already have claws
+  - Reptilian
   - Vox
   cost: 1
