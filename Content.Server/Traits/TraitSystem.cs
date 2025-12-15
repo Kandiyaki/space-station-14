@@ -60,10 +60,10 @@ public sealed class TraitSystem : EntitySystem
                     }
                 }
             }
-            else // imp end
-            {
-                EntityManager.AddComponents(args.Mob, traitPrototype.Components, false);
-            }
+            else 
+            { //imp edit - allow for component replacement
+                EntityManager.AddComponents(args.Mob, traitPrototype.Components, traitPrototype.ShouldReplaceComponents);
+            } //imp end
 
             // Add item required by the trait
             if (traitPrototype.TraitGear == null)

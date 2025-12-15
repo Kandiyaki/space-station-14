@@ -47,6 +47,12 @@ public sealed partial class TraitPrototype : IPrototype
     public ComponentRegistry Components { get; private set; } = default!;
 
     /// <summary>
+    /// IMP: If true, this will replace any components that already exist on the mob with the trait's version of the component.
+    /// </summary>
+    [DataField]
+    public bool ShouldReplaceComponents = false;
+
+    /// <summary>
     /// Gear that is given to the player, when they pick this trait.
     /// </summary>
     [DataField]

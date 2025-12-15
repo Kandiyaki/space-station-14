@@ -180,6 +180,7 @@
   excludedSpecies: #already have claws
   - Reptilian
   - Vox
+  shouldReplaceComponents: true
   cost: 1
 
 # - type: trait
