@@ -12,8 +12,8 @@
   components:
     - type: PermanentBlindness
   # imp addition starts
-  subcategories:
-    - Visual
+  disallows:
+    - PoorVision
   cost: -16
   # imp addition end
 
@@ -30,9 +30,8 @@
       blindness: 4
     - type: StartWithLenses # imp addition
   # imp addition starts
-  subcategories: # imp
-    - Visual
-  cost: -1
+  disallows: # imp
+    - Blindness
   # imp addition end
 
 - type: trait
@@ -59,8 +58,8 @@
     - type: Unrevivable
       cloneable: true
   # imp addition starts
-  subcategories:
-    - Unrevivability
+  disallows:
+    - RandomUnrevivable
   cost: -3
   # imp addition ends
 
@@ -72,9 +71,9 @@
   components:
   - type: BlackAndWhiteOverlay
   # imp addition starts
-  subcategories:
-    - Visual
-  cost: -1
+  disallows:
+    - UltraVision
+    - DogVision
   # imp addition ends
 
 - type: trait
@@ -91,8 +90,8 @@
       mutedScream: false # IMP
       mutedSpeech: true # IMP
   # imp addition starts
-  subcategories:
-    - Speech
+  disallows:
+    - SGDrequired
     - Echolalia
   cost: -6
   # imp addition ends

@@ -4,7 +4,8 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Content.Shared._Impstation.Traits; // imp
-using Robust.Shared.Prototypes; // imp
+using Robust.Shared.Prototypes;
+using Content.Shared.Humanoid.Prototypes; // imp
 
 namespace Content.Client.Lobby.UI.Roles;
 
@@ -20,7 +21,10 @@ public sealed partial class TraitPreferenceSelector : Control
     }
 
     // begin imp addition
-    public HashSet<ProtoId<TraitSubcategoryPrototype>> Subcategories = [];
+    public HashSet<ProtoId<SpeciesPrototype>> ExSpecies = [];
+    public HashSet<ProtoId<TraitPrototype>> Requires = [];
+    public HashSet<ProtoId<TraitPrototype>> Disallows = [];
+    public TraitPrototype? Trait = null;
     // end imp addition
 
     public event Action<bool>? PreferenceChanged;
@@ -34,7 +38,10 @@ public sealed partial class TraitPreferenceSelector : Control
 
         Cost = trait.Cost;
         // begin Imp addition
-        Subcategories = trait.Subcategories;
+        ExSpecies = trait.ExcludedSpecies;
+        Requires = trait.Requires;
+        Disallows = trait.Disallows;
+        Trait = trait;
         // end Imp addition
         Checkbox.Text = text;
         Checkbox.OnToggled += OnCheckBoxToggled;

@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseItem
+  id: ItemRetractableFlame
+  name: small flame
+  description: A small flame emitting from the holder's fingertip. Too small to do much more than light a cigarette.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Lighters/lighters.rsi
+    state: lighter_flame
+  - type: IgnitionSource
+    ignited: true
+    temperature: 10
+  - type: PointLight
+    enabled: true
+    netsync: false
+    radius: 1.2
+    color: orange

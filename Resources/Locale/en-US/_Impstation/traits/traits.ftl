@@ -118,3 +118,12 @@ trait-slight-desc = You're lighter than average.
 
 trait-soft-hands-name = Soft hands
 trait-soft-hands-desc = You're too weak to wield anything.
+
+trait-flame-emitter-name = Flame Emitter
+trait-flame-emitter-desc = You can emit a small flame from your fingertips. Requires Synthetic or Magical.
+
+trait-magical-name = Magical
+trait-magical-desc = You're able to use magic.
+
+trait-claws-name = Claws
+trait-claws-desc = Your unarmed attacks do slash damage.

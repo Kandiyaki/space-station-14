@@ -5,9 +5,9 @@
   category: Traits
   components:
     - type: RandomUnrevivable
-  subcategories:
-    - Unrevivability
-  cost: -2
+  disallows:
+    - Unrevivable
+  cost: -3
 
 - type: trait
   id: SGDrequired
@@ -22,9 +22,8 @@
           tags:
             - SGD
       failMessage: sgdrequired-cant-speak
-  subcategories:
-    - Speech
-  cost: -1
+  disallows:
+    - Muted
 
 - type: trait
   id: Unborgable
@@ -112,9 +111,8 @@
     minimumWait: 300
     maximumWait: 600 # triggers once every 5-10 minutes
     learnChance: 0.1
-  subcategories:
-    - Echolalia
-  cost: -1
+  disallows:
+    - Muted
 
 - type: trait
   id: UnadaptedToSpace
@@ -141,3 +139,44 @@
   components:
   - type: UnableToWield
   cost: -3
+
+- type: trait
+  id: FlameEmitter
+  name: trait-flame-emitter-name
+  description: trait-flame-emitter-desc
+  category: Traits
+  components:
+  - type: ActionGrant
+    actions:
+    - ActionRetractableItemFlame
+  requires:
+  - Magical
+  - Synthetic
+  cost: 3
+  
+- type: trait
+  id: Magical
+  name: trait-magical-name
+  description: trait-magical-desc
+  category: Traits
+  components:
+  - type: Magic
+  cost: 3
+
+- type: trait
+  id: Claws
+  name: trait-claws-name
+  description: trait-claws-desc
+  category: Traits
+  components:
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  excludedSpecies: #already have claws. no free points
+  - Vox
+  cost: 1

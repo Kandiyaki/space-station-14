@@ -6,9 +6,9 @@
   components:
     - type: UltraVision
   # imp addition starts
-  subcategories:
-    - Visual
-  cost: -1
+  disallows:
+    - Monochromacy
+    - DogVision
   # imp addition ends
 
 - type: trait
@@ -19,7 +19,7 @@
   components:
     - type: DogVision
   # imp addition starts
-  subcategories:
-    - Visual
-  cost: -1
+  disallows:
+    - Monochromacy
+    - UltraVision
   # imp addition ends

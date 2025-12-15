@@ -6,3 +6,4 @@
   # Imp - removed IPCs from excludedSpecies as they are not real here
   components:
     - type: Synth
+  cost: 1

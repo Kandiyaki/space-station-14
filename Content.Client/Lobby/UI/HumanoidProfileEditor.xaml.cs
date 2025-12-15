@@ -575,7 +575,10 @@ namespace Content.Client.Lobby.UI
                 }
 
                 List<TraitPreferenceSelector?> selectors = new();
-                List<ProtoId<TraitSubcategoryPrototype>> usedSubcategories = []; // imp addition
+                List<ProtoId<TraitPrototype>> locked = new(); //all traits that are disallowed by currently chosen traits
+                List<ProtoId<TraitPrototype>> unlocked = new(); //all traits that are only accessible because of currently chosen traits
+
+
                 var selectionCount = 0;
 
                 foreach (var traitProto in categoryTraits)
@@ -585,14 +588,30 @@ namespace Content.Client.Lobby.UI
 
                     selector.Preference = Profile?.TraitPreferences.Contains(trait.ID) == true;
                     if (selector.Preference)
-                    // begin Imp edits - ignore any traits that conflict with subcategories of already selected traits
+                    // begin Imp edits - ignore any traits that conflict with already selected traits
                     {
                         selectionCount += trait.Cost;
-                        foreach (var subcategory in trait.Subcategories)
+                        //add all unlocked traits to the whitelist
+                        foreach (var possibleUnlock in traits)
                         {
-                            if (!usedSubcategories.Contains(subcategory))
+                            if (possibleUnlock.Requires.Contains(trait))
                             {
-                                usedSubcategories.Add(subcategory);
+                                unlocked.Add(possibleUnlock);
+                            }
+                        }
+
+                        //block clicking on traits that don't have their prereqs
+                        if(trait.Requires.Count > 0 && !unlocked.Contains(trait))
+                        {
+                            Profile = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
+                        }
+
+                        //add all disallowed traits to the blacklist
+                        foreach (var disallowedByTrait in trait.Disallows)
+                        {
+                            if (!locked.Contains(disallowedByTrait))
+                            {
+                                locked.Add(disallowedByTrait);
                             }
                             else
                             {
@@ -654,7 +673,7 @@ namespace Content.Client.Lobby.UI
 
                 foreach (var selector in selectors)
                 {
-                    if (selector == null)
+                    if (selector == null || selector.Trait == null)
                         continue;
 
                     if (category is { MaxTraitPoints: >= 0 } &&
@@ -663,11 +682,19 @@ namespace Content.Client.Lobby.UI
                         selector.Checkbox.Label.FontColorOverride = Color.Red;
                     }
 
-                    // begin Imp additions -- disallow players from selecting multiple traits in the same subcategory
-                    if (!selector.Preference && selector.Subcategories.Overlaps(usedSubcategories))
+                    // begin Imp additions -- disallow players from selecting non-unlocked traits
+                    if (selector.Requires.Count > 0 && !unlocked.Contains(selector.Trait))
+                    {
+                        selector.Checkbox.Label.FontColorOverride = Color.Yellow;
+                    }
+
+                    //disallow players from selecting blocked traits (overrides unlocked)
+                    if (!selector.Preference && locked.Contains(selector.Trait))
                     {
                         selector.Checkbox.Label.FontColorOverride = Color.Red;
                     }
+
+
                     // end Imp additions
 
                     // imp start: ui layout

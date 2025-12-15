@@ -78,8 +78,14 @@ public sealed partial class TraitPrototype : IPrototype
     public HashSet<ProtoId<SpeciesPrototype>> ExcludedSpecies = [];
 
     /// <summary>
-    /// Imp - Traits with the same subcategory cannot be taken in tandem for free points (e.g. blindness and colorblindness)
+    /// Imp - you must have one of the listed traits to "unlock" this one - also works if the species has it excluded (e.g. "sharper claws" needs either lizard species or claws trait)
     /// </summary>
     [DataField]
-    public HashSet<ProtoId<TraitSubcategoryPrototype>> Subcategories = [];
+    public HashSet<ProtoId<TraitPrototype>> Requires = [];
+
+    /// <summary>
+    /// Imp - Having this trait "blocks" the listed traits (e.g. you can't be blind and shortsighted at the same time)
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<TraitPrototype>> Disallows = []; 
 }

@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseAction
+  id: ActionRetractableItemFlame
+  name: Emit Flame
+  description: Emit a small flame from your fingertips.
+  components:
+  - type: Action
+    useDelay: 2
+    raiseOnAction: true
+    itemIconStyle: BigAction
+    icon:
+      sprite: Objects/Tools/Lighters/lighters.rsi
+      state: lighter_flame
+  - type: InstantAction
+    event: !type:OnRetractableItemActionEvent
+  - type: RetractableItemAction
+    spawnedPrototype: ItemRetractableFlame
+    summonSounds:
+      collection: lighterOnSounds
+    retractSounds:
+      collection: lighterOffSounds
