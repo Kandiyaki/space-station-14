@@ -122,8 +122,11 @@ trait-soft-hands-desc = You're too weak to wield anything.
 trait-flame-emitter-name = Flame Emitter
 trait-flame-emitter-desc = You can emit a small flame from your fingertips. Requires Synthetic or Magical.
 
-trait-magical-name = Magical
-trait-magical-desc = You're able to use magic.
+trait-magical-name = Magic User
+trait-magical-desc = You're able to use magic. Does nothing on its own.
 
 trait-claws-name = Claws
-trait-claws-desc = Your unarmed attacks do slash damage.
+trait-claws-desc = Your unarmed attacks do slash damage. Unavailable to species that already have claws.
+
+trait-kill-bind-name = Kill Bind
+trait-kill-bind-desc = You can perform peak comedy, instantly dying at the press of a button.

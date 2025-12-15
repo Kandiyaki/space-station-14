@@ -19,3 +19,23 @@
       collection: lighterOnSounds
     retractSounds:
       collection: lighterOffSounds
+
+# - type: entity
+  # parent: BaseAction
+  # id: ActionKillBind
+  # name: Killbind
+  # description: Die instantly.
+  # components:
+  # - type: Action
+    # useDelay: 2
+    # raiseOnAction: true
+    # itemIconStyle: BigAction
+    # icon:
+      # sprite: Structures/Storage/Crates/stone_grave.rsi
+      # state: closed
+  # - type: InstantAction
+    # event: !type:KillBindEvent {}
+  # - type: KillbindAction
+    # selfDamage:
+      # types:
+        # Asphyxiation: 200

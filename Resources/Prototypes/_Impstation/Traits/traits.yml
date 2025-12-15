@@ -160,7 +160,7 @@
   description: trait-magical-desc
   category: Traits
   components:
-  - type: Magic
+  - type: MagicUser
   cost: 3
 
 - type: trait
@@ -181,3 +181,13 @@
   - Reptilian
   - Vox
   cost: 1
+
+# - type: trait
+  # id: KillBind
+  # name: trait-kill-bind-name
+  # description: trait-kill-bind-desc
+  # category: Traits
+  # components:
+  # - type: ActionGrant
+    # actions:
+    # - ActionKillBind
