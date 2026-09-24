@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseAction
+  id: ActionLobotBrainRemove
+  name: Eject Brain
+  description: Eject your real body from its chassis.
+  components:
+  - type: Action
+    useDelay: 5
+  - type: Sprite
+    sprite: _MACRO/Interface/Actions/kodepiia.rsi
+    layers:
+    - state: kodepiia_shapeshift
+  - type: InstantAction
+    event: !type:LobotBrainRemoveEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionLobotBrainBoard
+  name: Commandeer Chassis
+  description: Climb into an empty Lobot chassis.
+  components:
+  - type: Action
+    useDelay: 5
+  - type: Sprite
+    sprite: _MACRO/Interface/Actions/kodepiia.rsi
+    layers:
+    - state: kodepiia_shapeshift
+  - type: TargetAction
+  - type: EntityTargetAction
+    event: !type:LobotBrainBoardEvent
+    canTargetSelf: false
