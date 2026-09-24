@@ -1,0 +1,27 @@
+﻿names-lobot-first-1 = Capacitor
+names-lobot-first-2 = Inductor
+names-lobot-first-3 = Resistor
+names-lobot-first-4 = Speaker
+names-lobot-first-5 = Wire
+names-lobot-first-6 = Firewall
+names-lobot-first-7 = Browser
+names-lobot-first-8 = Writer
+names-lobot-first-9 = Chatroom
+names-lobot-first-10 = Chip
+names-lobot-first-11 = Diode
+names-lobot-first-12 = Fan
+names-lobot-first-13 = Port
+names-lobot-first-14 = Packet
+
+names-lobot-last-1 = Gold
+names-lobot-last-2 = Silver
+names-lobot-last-3 = Aluminum
+names-lobot-last-4 = Iron
+names-lobot-last-5 = Steel
+names-lobot-last-6 = Copper
+names-lobot-last-7 = Bronze
+names-lobot-last-8 = Electrum
+names-lobot-last-9 = Thorium
+names-lobot-last-10 = Radium
+names-lobot-last-11 = Uranium
+names-lobot-last-12 = Orichalcum

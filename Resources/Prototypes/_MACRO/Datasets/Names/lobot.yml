@@ -1,0 +1,11 @@
+- type: localizedDataset
+  id: NamesLobotFirst
+  values:
+    prefix: names-lobot-first-
+    count: 14
+
+- type: localizedDataset
+  id: NamesLobotLast
+  values:
+    prefix: names-lobot-last-
+    count: 12

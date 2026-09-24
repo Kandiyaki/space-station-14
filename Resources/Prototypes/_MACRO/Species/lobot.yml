@@ -1,0 +1,23 @@
+- type: species
+  id: Lobot
+  name: species-name-lobot
+  roundStart: false
+  #randomViable: false
+  prototype: MobLobotChassis
+  defaultSkinTone: "#385878"
+  dollPrototype: AppearanceLobot
+  skinColoration: Hues
+  maleFirstNames: NamesLobotFirst
+  femaleFirstNames: NamesLobotFirst
+  lastNames: NamesLobotLast
+  sexes:
+  - Unsexed
+  defaultSoundsBySex:
+  - UnisexDecapoid
+  - UnisexDecapoid
+  - UnisexDecapoid
+  voices:
+  - UnisexDecapoid
+
+# Developer Notes
+# 
