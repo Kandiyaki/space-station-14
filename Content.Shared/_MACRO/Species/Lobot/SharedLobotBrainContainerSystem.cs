@@ -1,5 +1,3 @@
-
-
 using Content.Shared._MACRO.Species.Lobot.Components;
 using Content.Shared.Actions;
 using Content.Shared.Body;
@@ -15,7 +13,16 @@ public abstract partial class SharedLobotBrainContainerSystem : EntitySystem
     [SubscribeLocalEvent]
     private void OnStartup(Entity<LobotBrainContainerComponent> ent, ref ComponentStartup args)
     {
-        _body.TryGetOrgansWithComponent<LobotBrainComponent>(ent.Owner, out var brains);
+        var bodyEnt = WithCompOrNull<BodyComponent>(ent.Owner);
+        if (bodyEnt is not null)//the container has a body, so we can check its organs
+        {
+            _body.RelayEvent<LobotBrainContainerStartupEvent>(bodyEnt.Value, new LobotBrainContainerStartupEvent()); //this is caught by LobotBrainSystem and assigns the brain to the comp's container if exists
+        }
+        else //for a theoretical chassis without a body component (like, slotting a brain into a control console)
+        {
+
+        }
+
 
     }
 
@@ -25,3 +32,5 @@ public abstract partial class SharedLobotBrainContainerSystem : EntitySystem
 
     }
 }
+
+public sealed partial class LobotBrainContainerStartupEvent : EntityEventArgs {Entity<LobotBrainContainerComponent> _entity};
