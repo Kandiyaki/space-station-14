@@ -95,8 +95,9 @@
   name: USB McHalite
   components:
   - type: LobotBrainRemove
+  - type: LobotBrainContainer
 
-- type: entity # my evil ass prototype!!!
+- type: entity # this is my prototype. it has every disease
   name: lobot brain
   parent: [BaseControllable, BaseItem, OrganBaseChildInternal]
   id: MobLobotBrain
@@ -104,6 +105,7 @@
   components:
   - type: GibbableOrgan
   - type: LobotBrainBoard
+  - type: LobotBrain
   - type: Brain
   - type: Organ
     category: Brain
@@ -135,13 +137,6 @@
   - type: FlavorProfile
     flavors:
     - meaty
-  - type: Respirator
-    damage:
-      types:
-        Asphyxiation: 0.25
-    damageRecovery:
-      types:
-        Asphyxiation: -0.25
   - type: Barotrauma
     damage:
       types:

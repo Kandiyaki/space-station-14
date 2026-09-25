@@ -3,9 +3,9 @@ using Content.Shared.Actions;
 
 namespace Content.Shared._MACRO.Species.Lobot;
 /// <summary>
-/// Handles lobot brains entering their chassis
+/// Handles adding the boarding action to lobot brains 
 /// </summary>
-public abstract partial class SharedLobotBrainBoardSystem : EntitySystem
+public sealed partial class SharedLobotBrainBoardSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
 

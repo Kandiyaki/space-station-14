@@ -3,9 +3,9 @@ using Content.Shared.Actions;
 
 namespace Content.Shared._MACRO.Species.Lobot;
 /// <summary>
-/// Handles lobot brains exiting their chassis
+/// Handles adding the ejection action to lobot chassis (or other lobot-boardable stuff i guess)
 /// </summary>
-public abstract partial class SharedLobotBrainRemoveSystem : EntitySystem
+public sealed partial class SharedLobotBrainRemoveSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
 
