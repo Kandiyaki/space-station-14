@@ -1,3 +1,4 @@
+using Content.Shared._MACRO.Species.Lobot;
 using Content.Shared.Body.Events;
 using Content.Shared.Gibbing;
 using Content.Shared.Humanoid;
@@ -59,6 +60,7 @@ public sealed partial class BodySystem
         var ev = new BodyRelayedEvent<T>(ent, args);
         foreach (var organ in ent.Comp.Organs?.ContainedEntities ?? [])
         {
+            Log.Debug(message: $"Relaying event to organ {ToPrettyString(organ)}");
             RaiseLocalEvent(organ, ref ev);
         }
     }
