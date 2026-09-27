@@ -11,7 +11,7 @@
     layers:
     - state: kodepiia_shapeshift
   - type: InstantAction
-    event: !type:LobotBrainRemoveEvent
+    event: !type:LobotBrainRemoveActionEvent
 
 - type: entity
   parent: BaseAction
@@ -27,5 +27,5 @@
     - state: kodepiia_shapeshift
   - type: TargetAction
   - type: EntityTargetAction
-    event: !type:LobotBrainBoardEvent
+    event: !type:LobotBrainBoardActionEvent
     canTargetSelf: false

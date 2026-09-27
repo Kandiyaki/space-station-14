@@ -7,7 +7,7 @@ namespace Content.Shared._MACRO.Species.Lobot;
 /// <summary>
 /// Handles inserting and removing lobot brains from chassis
 /// </summary>
-public sealed partial class SharedLobotBrainContainerSystem : EntitySystem
+public abstract partial class SharedLobotBrainContainerSystem : EntitySystem
 {
     [Dependency] private BodySystem _body = default!;
     [Dependency] private SharedContainerSystem _container = default!;
@@ -17,13 +17,13 @@ public sealed partial class SharedLobotBrainContainerSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<LobotBrainContainerComponent, LobotBrainBoardEvent>(OnBoarded);
-        SubscribeLocalEvent<LobotBrainContainerComponent, LobotBrainRemoveEvent>(OnExited);
+        SubscribeLocalEvent<LobotBrainContainerComponent, LobotBrainRemoveActionEvent>(OnExited);
         SubscribeLocalEvent<BodyComponent, LobotBrainContainerStartupEvent>(_body.RelayEvent);
 
     }
 
     [SubscribeLocalEvent]
-    private void OnStartup(Entity<LobotBrainContainerComponent> ent, ref ComponentStartup args)
+    public void OnStartup(Entity<LobotBrainContainerComponent> ent, ref ComponentStartup args)
     {
 
         var bodyEnt = WithCompOrNull<BodyComponent>(ent);
@@ -40,9 +40,9 @@ public sealed partial class SharedLobotBrainContainerSystem : EntitySystem
         }
     }
 
-    private void OnBoarded(Entity<LobotBrainContainerComponent> ent, ref LobotBrainBoardEvent args)
+    public void OnBoarded(Entity<LobotBrainContainerComponent> ent, ref LobotBrainBoardEvent args)
     {
-        Log.Debug(message: $"OnBoarded recieved BoardEvent with performer: {args.Performer}");
+        Log.Debug(message: $"OnBoarded recieved BoardEvent with brain: {args.Brain}");
         if (ent.Comp.CurrentBrain != null)
         {
             //there's already a brain in this container, so we can't insert another
@@ -50,11 +50,11 @@ public sealed partial class SharedLobotBrainContainerSystem : EntitySystem
         }
 
         //CURRENT ISSUE: SOMETHING SOMETHING NETID VS UID AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        var brain = args.Performer;
+        var brain = args.Brain;
         Log.Debug(message: $"set OnBoarded brain to: {ToPrettyString(brain)}");
 
 
-        ent.Comp.CurrentBrain = brain;
+        SetCurrentBrain(ent, brain);
 
         var bodyEnt = WithCompOrNull<BodyComponent>(ent);
         if (bodyEnt is not null)//the container has a body, so we can change its organs
@@ -77,7 +77,7 @@ public sealed partial class SharedLobotBrainContainerSystem : EntitySystem
 
     }
 
-    private void OnExited(Entity<LobotBrainContainerComponent> ent, ref LobotBrainRemoveEvent args)
+    public void OnExited(Entity<LobotBrainContainerComponent> ent, ref LobotBrainRemoveActionEvent args)
     {
         var brain = ent.Comp.CurrentBrain;
         var body = args.Performer;
@@ -104,6 +104,11 @@ public sealed partial class SharedLobotBrainContainerSystem : EntitySystem
 
         }
 
+    }
+
+    public void SetCurrentBrain(Entity<LobotBrainContainerComponent> ent, EntityUid? brain)
+    {
+        ent.Comp.CurrentBrain = brain;
     }
 }
 

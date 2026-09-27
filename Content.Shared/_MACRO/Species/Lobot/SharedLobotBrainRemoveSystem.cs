@@ -26,4 +26,4 @@ public sealed partial class SharedLobotBrainRemoveSystem : EntitySystem
 /// <summary>
 ///   
 /// </summary>
-public sealed partial class LobotBrainRemoveEvent : InstantActionEvent;
+public sealed partial class LobotBrainRemoveActionEvent : InstantActionEvent;

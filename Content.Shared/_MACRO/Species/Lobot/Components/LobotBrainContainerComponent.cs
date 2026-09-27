@@ -7,12 +7,12 @@ namespace Content.Shared._MACRO.Species.Lobot.Components;
 /// Also marks an object as capable of brain takeover
 /// </summary>
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class LobotBrainContainerComponent : Component
 {
     /// <summary>
     /// The brain currently inside and controlling the chassis. Null if no brain is present.
     /// </summary>
-    [DataField]
-    public EntityUid? CurrentBrain;
+    [DataField, AutoNetworkedField]
+    public EntityUid? CurrentBrain { get; set; }
 }

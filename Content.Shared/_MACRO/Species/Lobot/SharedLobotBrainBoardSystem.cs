@@ -22,8 +22,4 @@ public sealed partial class SharedLobotBrainBoardSystem : EntitySystem
     }
 
 }
-
-/// <summary>
-///    
-/// </summary>
-public sealed partial class LobotBrainBoardEvent : EntityTargetActionEvent;
+public sealed partial class LobotBrainBoardActionEvent : EntityTargetActionEvent;
